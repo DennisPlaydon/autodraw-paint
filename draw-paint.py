@@ -262,4 +262,4 @@ for i in sentence_array:
         function_dict[i](startX, startY)
         startX += 80
     except:
-        continue
+        continue1
