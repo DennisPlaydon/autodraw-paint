@@ -209,6 +209,9 @@ class Alphabet:
         pyautogui.dragRel(-50, 100)
         pyautogui.dragRel(50, 0)
 
+alphabet = Alphabet()
+func = input('>')
+sentence_array = list(func)
 width, height = pyautogui.size()
 # open paint
 pyautogui.click(0, height, button='left')
@@ -217,14 +220,40 @@ pyautogui.typewrite('paint')
 time.sleep(1)
 pyautogui.press('enter')
 
-alphabet = Alphabet()
-alphabet.drawH(130, 301)
-alphabet.drawE(210, 301)
-alphabet.drawL(290, 301)
-alphabet.drawL(360, 301)
-alphabet.drawO(440, 301)
-alphabet.drawW(130, 601)
-alphabet.drawO(210, 601)
-alphabet.drawR(290, 601)
-alphabet.drawL(360, 601)
-alphabet.drawD(440, 601)
+function_dict = {
+    'A': alphabet.drawA,
+    'B': alphabet.drawB,
+    'C': alphabet.drawC,
+    'D': alphabet.drawD,
+    'E': alphabet.drawE,
+    'F': alphabet.drawF,
+    'G': alphabet.drawG,
+    'H': alphabet.drawH,
+    'I': alphabet.drawI,
+    'J': alphabet.drawJ,
+    'K': alphabet.drawK,
+    'L': alphabet.drawL,
+    'M': alphabet.drawM,
+    'N': alphabet.drawN,
+    'O': alphabet.drawO,
+    'P': alphabet.drawP,
+    'Q': alphabet.drawQ,
+    'R': alphabet.drawR,
+    'S': alphabet.drawS,
+    'T': alphabet.drawT,
+    'U': alphabet.drawU,
+    'V': alphabet.drawV,
+    'W': alphabet.drawW,
+    'X': alphabet.drawX,
+    'Y': alphabet.drawY,
+    'Z': alphabet.drawZ
+}
+
+startX = 130
+startY = 301
+for i in sentence_array:
+    try:
+        function_dict[i](startX, startY)
+        startX += 80
+    except:
+        continue
