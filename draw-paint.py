@@ -253,6 +253,9 @@ startX = 130
 startY = 301
 for i in sentence_array:
     i = i.upper()
+    if startX > 0.7*width:
+        startY += 200
+        startX = 130
     if i == " ":
         startX += 80
     try:
