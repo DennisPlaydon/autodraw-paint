@@ -253,6 +253,8 @@ startX = 130
 startY = 301
 for i in sentence_array:
     i = i.upper()
+    if i == " ":
+        startX += 80
     try:
         function_dict[i](startX, startY)
         startX += 80
